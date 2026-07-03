@@ -1,98 +1,74 @@
 import type { PrimitiveColors, SemanticColors } from '../../types.js';
+import { makeRef } from '../../utils/ref.js';
 
-// ── Personal Brand: Warm Zine / Screen-Print Aesthetic ───────────────────────
-// Fill in hex or oklch values. The palette direction:
-//   sienna  → burnt sienna family — earthy warm orange-brown (primary interactive)
-//   yellow  → raw yellow / uncoated paper yellow (accent, energy)
-//   ink     → near-black with a warm undertone (text, deep backgrounds)
-//   paper   → cream / off-white with warmth (light backgrounds, base surface)
-//   warm    → warm neutral grays for UI chrome
-//
-// Suggested starting point for exploration:
-//   sienna.600 ≈ #8b4513 (burnt sienna), yellow.400 ≈ #f5c842 (raw yellow)
-//   ink.900 ≈ #1c1510, paper.50 ≈ #faf6ef
+// Personal Brand: warm dark theme, single warm-neutral primitive ramp.
+// Neutral is yellow-brown toned, not gray — intentional for the editorial voice.
+// The only non-neutral color is the focus ring (#0252BC).
+
+const ref = makeRef('personal');
 
 export const personalPrimitiveColors: PrimitiveColors = {
-  sienna: {
-    800: 'TODO: #?????? — deep sienna, pressed/active state',
-    700: 'TODO: #?????? — dark sienna, hover state',
-    600: 'TODO: #?????? — burnt sienna base (primary color)',
-    500: 'TODO: #?????? — mid sienna',
-    400: 'TODO: #?????? — light sienna, tint',
-    200: 'TODO: #?????? — very pale sienna, subtle bg',
-  },
-  yellow: {
-    500: 'TODO: #?????? — raw yellow base (accent color)',
-    400: 'TODO: #?????? — bright yellow',
-    300: 'TODO: #?????? — pale yellow tint',
-    200: 'TODO: #?????? — very pale yellow',
-  },
-  ink: {
-    950: 'TODO: #?????? — near-total-black with warm undertone',
-    900: 'TODO: #?????? — deep ink, primary dark text',
-    800: 'TODO: #?????? — softer ink, secondary text',
-    700: 'TODO: #?????? — muted ink',
-  },
-  paper: {
-    50:  'TODO: #?????? — warm cream, main light background',
-    100: 'TODO: #?????? — slightly less warm cream, surface',
-    200: 'TODO: #?????? — warm light gray, inset/card on light bg',
-  },
-  warm: {
-    300: 'TODO: #?????? — warm mid-gray, borders',
-    400: 'TODO: #?????? — warm dark gray, strong borders',
-    500: 'TODO: #?????? — warm charcoal',
-  },
-  // Feedback
-  red: {
-    600: 'TODO: #?????? — error base (earthy red, not clinical)',
-    900: 'TODO: #?????? — error foreground on light bg',
-  },
-  amber: {
-    400: 'TODO: #?????? — warning base (can overlap yellow accent)',
-    900: 'TODO: #?????? — warning foreground',
-  },
-  green: {
-    600: 'TODO: #?????? — success base (earthy green)',
-    900: 'TODO: #?????? — success foreground',
+  neutral: {
+    '100': '#F4F3EE',
+    '200': '#E6E4DA',
+    '300': '#CCCAB8',
+    '400': '#A8A690',
+    '500': '#7E7C66',
+    '600': '#565442',
+    '700': '#36342A',
+    '800': '#211F17',
+    '900': '#131108',
   },
 };
 
 export const personalSemanticColors: SemanticColors = {
   background: {
-    base:   'TODO: ref → primitive.paper.50',
-    subtle: 'TODO: ref → primitive.paper.100',
-    inset:  'TODO: ref → primitive.paper.200',
+    base:   ref('neutral', '900'),   // #131108 — page background
+    subtle: ref('neutral', '800'),   // #211F17 — raised card background
+    inset:  ref('neutral', '900'),   // #131108 — same as page (palette has no darker step)
   },
   foreground: {
-    base:   'TODO: ref → primitive.ink.900',
-    muted:  'TODO: ref → primitive.ink.700',
-    subtle: 'TODO: ref → primitive.warm.400',
+    base:   ref('neutral', '100'),   // #F4F3EE — headings / primary text
+    muted:  ref('neutral', '300'),   // #CCCAB8 — body copy
+    subtle: ref('neutral', '400'),   // #A8A690 — placeholder / disabled text
   },
   primary: {
-    base:       'TODO: ref → primitive.sienna.600',
-    hover:      'TODO: ref → primitive.sienna.700',
-    active:     'TODO: ref → primitive.sienna.800',
-    foreground: 'TODO: ref → primitive.paper.50',
+    base:       ref('neutral', '100'),   // #F4F3EE — cream button fill
+    hover:      ref('neutral', '300'),   // #CCCAB8 — dims on hover
+    active:     ref('neutral', '400'),   // #A8A690 — pressed state
+    foreground: ref('neutral', '800'),   // #211F17 — dark text on cream button
   },
   accent: {
-    base:       'TODO: ref → primitive.yellow.500',
-    hover:      'TODO: ref → primitive.yellow.400',
-    active:     'TODO: ref → primitive.yellow.300 (or darken)',
-    foreground: 'TODO: ref → primitive.ink.950',
+    base:       ref('neutral', '200'),   // #E6E4DA — warm cream callout / highlight
+    hover:      ref('neutral', '100'),   // #F4F3EE
+    active:     ref('neutral', '300'),   // #CCCAB8
+    foreground: ref('neutral', '900'),   // #131108 — dark text on cream accent
   },
   border: {
-    base:   'TODO: ref → primitive.warm.300',
-    subtle: 'TODO: ref → primitive.paper.200',
+    base:   ref('neutral', '700'),   // #36342A — default border
+    subtle: ref('neutral', '800'),   // #211F17 — subtle / inset border
   },
   surface: {
-    base:    'TODO: ref → primitive.paper.100',
-    raised:  'TODO: ref → primitive.paper.50',
-    overlay: 'TODO: ref → primitive.paper.200',
+    base:    ref('neutral', '800'),   // #211F17 — card / panel
+    raised:  ref('neutral', '700'),   // #36342A — elevated surface
+    overlay: ref('neutral', '800'),   // #211F17 — modal / dialog backdrop
   },
   feedback: {
-    error:   { base: 'TODO: ref → primitive.red.600',   foreground: 'TODO: ref → primitive.red.900'   },
-    warning: { base: 'TODO: ref → primitive.amber.400', foreground: 'TODO: ref → primitive.amber.900' },
-    success: { base: 'TODO: ref → primitive.green.600', foreground: 'TODO: ref → primitive.green.900' },
+    error:   { base: 'oklch(0.55 0.18 25)',  foreground: ref('neutral', '100') },
+    warning: { base: 'oklch(0.75 0.15 75)',  foreground: ref('neutral', '900') },
+    success: { base: 'oklch(0.55 0.12 145)', foreground: ref('neutral', '100') },
+  },
+  focus: {
+    ring: '#0252BC',   // the only blue in the system — deliberate accessibility anchor
+  },
+  link: {
+    base:    ref('neutral', '500'),   // #7E7C66
+    hover:   ref('neutral', '600'),   // #565442
+    visited: ref('neutral', '600'),   // #565442
+  },
+  inverse: {
+    background: ref('neutral', '200'),   // #E6E4DA — warm cream inverse surface
+    foreground: ref('neutral', '800'),   // #211F17 — dark text on cream
+    border:     ref('neutral', '700'),   // #36342A
   },
 };

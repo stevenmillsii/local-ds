@@ -1,32 +1,26 @@
 import type { TypographyTokens } from '../../types.js';
 
-// ── HFD Typography ────────────────────────────────────────────────────────────
-// Direction: industrial / condensed display + clean grotesque body + monospace
-// Suggestions to explore:
-//   display → something bold/condensed (e.g. Barlow Condensed, Bebas Neue, Monument Grotesk)
-//   sans    → neutral grotesque (e.g. Inter, Geist Sans, DM Sans)
-//   mono    → technical monospace (e.g. JetBrains Mono, Geist Mono, Berkeley Mono)
-//
-// All font stacks end with a system fallback.
+// HFD Typography
+// Geist Mono is used for headings, labels, buttons, and nav — industrial mono aesthetic.
+// Geist (sans) is used for body copy. Font sizes match Tailwind defaults.
 
 export const hfdTypography: TypographyTokens = {
   fontFamily: {
-    display: 'TODO: "YourDisplayFont", "Barlow Condensed", Impact, sans-serif',
-    sans:    'TODO: "YourSansFont", "Inter", system-ui, -apple-system, sans-serif',
-    serif:   'TODO: "Georgia", "Times New Roman", serif',
-    mono:    'TODO: "YourMonoFont", "JetBrains Mono", "Fira Code", monospace',
+    sans:  '"Geist", system-ui, -apple-system, sans-serif',
+    serif: '"Georgia", "Times New Roman", serif',
+    mono:  '"Geist Mono", monospace',
   },
   fontSize: {
-    xs:   '0.75rem',   // 12px
-    sm:   '0.875rem',  // 14px
-    base: '1rem',      // 16px
-    lg:   '1.125rem',  // 18px
-    xl:   '1.25rem',   // 20px
-    '2xl': '1.5rem',   // 24px
-    '3xl': '1.875rem', // 30px
-    '4xl': '2.25rem',  // 36px
-    '5xl': '3rem',     // 48px
-    '6xl': '3.75rem',  // 60px
+    xs:   '0.75rem',
+    sm:   '0.875rem',
+    base: '1rem',
+    lg:   '1.125rem',
+    xl:   '1.25rem',
+    '2xl': '1.5rem',
+    '3xl': '1.875rem',
+    '4xl': '2.25rem',
+    '5xl': '3rem',
+    '6xl': '3.75rem',
   },
   fontWeight: {
     light:    '300',

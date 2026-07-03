@@ -45,6 +45,19 @@ export interface SemanticColors {
     warning: { base: CSSValue; foreground: CSSValue };
     success: { base: CSSValue; foreground: CSSValue };
   };
+  focus: {
+    ring: CSSValue;
+  };
+  link: {
+    base:    CSSValue;
+    hover:   CSSValue;
+    visited: CSSValue;
+  };
+  inverse: {
+    background: CSSValue;
+    foreground: CSSValue;
+    border:     CSSValue;
+  };
 }
 
 export interface FontFamilyTokens {
@@ -57,6 +70,7 @@ export interface FontFamilyTokens {
 export interface TypographyTokens {
   fontFamily: FontFamilyTokens;
   fontSize: {
+    '2xs'?: CSSValue;
     xs: CSSValue;
     sm: CSSValue;
     base: CSSValue;
