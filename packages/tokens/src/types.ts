@@ -103,6 +103,17 @@ export interface TypographyTokens {
     wide: CSSValue;
     wider: CSSValue;
   };
+  /**
+   * Typographic treatment for interactive labels (buttons, nav, tabs).
+   * Brands share the same fontWeight/letterSpacing scale but assign
+   * different values to this role — e.g. HFD renders interactive labels
+   * uppercase at weight 500, personal at weight 600, case-preserving.
+   */
+  interactive: {
+    fontWeight: CSSValue;
+    textTransform: CSSValue;
+    letterSpacing: CSSValue;
+  };
 }
 
 export interface SpacingTokens {

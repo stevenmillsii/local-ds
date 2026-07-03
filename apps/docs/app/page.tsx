@@ -5,9 +5,9 @@ import { Button } from '@stevenmillsii/components';
 // Each brand's generated theme CSS (packages/tokens/dist/themes/*.css) targets
 // :root, so only one brand's stylesheet can be active per page load (globals.css
 // currently imports the hfd theme). These objects duplicate the real semantic
-// values from packages/tokens/src/brands/{brand}/colors.ts purely so both
-// brands can be viewed side by side here. Remove this once a real scoped
-// brand-switching mechanism exists.
+// values from packages/tokens/src/brands/{brand}/colors.ts and typography.ts
+// purely so both brands can be viewed side by side here. Remove this once a
+// real scoped brand-switching mechanism exists.
 const brandPreviewVars: Record<'hfd' | 'personal', CSSProperties> = {
   hfd: {
     '--color-background': '#121212',
@@ -23,6 +23,9 @@ const brandPreviewVars: Record<'hfd' | 'personal', CSSProperties> = {
     '--color-error': 'oklch(0.704 0.191 22.216)',
     '--color-error-foreground': '#f5f5f5',
     '--color-focus-ring': '#ff2700',
+    '--font-weight-interactive': '500',
+    '--tracking-interactive': '0.025em',
+    '--text-transform-interactive': 'uppercase',
   } as CSSProperties,
   personal: {
     '--color-background': '#131108',
@@ -38,6 +41,9 @@ const brandPreviewVars: Record<'hfd' | 'personal', CSSProperties> = {
     '--color-error': 'oklch(0.55 0.18 25)',
     '--color-error-foreground': '#F4F3EE',
     '--color-focus-ring': '#0252BC',
+    '--font-weight-interactive': '600',
+    '--tracking-interactive': '0em',
+    '--text-transform-interactive': 'none',
   } as CSSProperties,
 };
 

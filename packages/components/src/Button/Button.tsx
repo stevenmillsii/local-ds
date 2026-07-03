@@ -6,7 +6,13 @@ import { cn } from '../utils/cn.js';
 const buttonVariants = cva(
   // Base styles applied to all variants.
   // Uses CSS vars from the active brand theme (set in globals.css via @theme).
-  'inline-flex items-center justify-center font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-focus-ring)] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50',
+  // font-mono + the two arbitrary-property declarations below come from the
+  // brand's `interactive` typography role — see ADR-003. font-weight is set
+  // via arbitrary property (not a `font-*` utility) because tailwind-merge
+  // only recognizes known font-weight keywords and otherwise misclassifies
+  // custom `font-*` theme keys as the font-family group, silently dropping
+  // font-mono when both are merged through cn().
+  'inline-flex items-center justify-center font-mono tracking-interactive [font-weight:var(--font-weight-interactive)] [text-transform:var(--text-transform-interactive)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-focus-ring)] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50',
   {
     variants: {
       variant: {

@@ -45,4 +45,9 @@ export const personalTypography: TypographyTokens = {
     wide:   '0.025em',
     wider:  '0.05em',
   },
+  interactive: {
+    fontWeight:    '600',   // semibold
+    textTransform: 'none',
+    letterSpacing: '0em',
+  },
 };

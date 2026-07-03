@@ -46,6 +46,15 @@ describe('Button', () => {
     expect(screen.getByRole('button')).toHaveClass('h-12');
   });
 
+  it('applies brand-driven interactive typography classes', () => {
+    render(<Button>Label</Button>);
+    const btn = screen.getByRole('button');
+    expect(btn).toHaveClass('font-mono');
+    expect(btn).toHaveClass('tracking-interactive');
+    expect(btn).toHaveClass('[font-weight:var(--font-weight-interactive)]');
+    expect(btn).toHaveClass('[text-transform:var(--text-transform-interactive)]');
+  });
+
   describe('loading', () => {
     it('sets aria-busy and keeps the button focusable rather than natively disabled', () => {
       render(<Button loading>Save</Button>);

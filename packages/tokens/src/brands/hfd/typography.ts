@@ -43,4 +43,9 @@ export const hfdTypography: TypographyTokens = {
     wide:   '0.025em',
     wider:  '0.05em',
   },
+  interactive: {
+    fontWeight:    '500',        // medium
+    textTransform: 'uppercase',
+    letterSpacing: '0.025em',    // wide — improves legibility for uppercase mono
+  },
 };
