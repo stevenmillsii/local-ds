@@ -1,0 +1,39 @@
+{
+  "name": "@YOUR_ORG/tokens",
+  "version": "0.2.0",
+  "description": "Design tokens for hfd and personal brands — colors, typography, spacing, radius",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./themes/hfd": "./dist/themes/hfd.css",
+    "./themes/personal": "./dist/themes/personal.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
+  "scripts": {
+    "build": "tsup && tsx scripts/generate-css.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "echo 'Lint: not configured — add ESLint or Biome'",
+    "test": "vitest run --passWithNoTests",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsup": "^8.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^2.0.0"
+  }
+}

@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+/*
+ * Brand token import — swap this line to switch brands.
+ * SETUP: Replace @YOUR_ORG with your actual package scope.
+ * Available: @YOUR_ORG/tokens/themes/hfd | @YOUR_ORG/tokens/themes/personal
+ */
+@import "@YOUR_ORG/tokens/themes/hfd";
+
+/*
+ * The @theme block above is already emitted by the token CSS file.
+ * Add any docs-specific overrides here if needed.
+ */

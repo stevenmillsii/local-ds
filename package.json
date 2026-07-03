@@ -1,0 +1,30 @@
+{
+  "name": "local-ds",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "clean": "turbo run clean && find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
+    "verify": "turbo run build typecheck lint test",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "publish:packages": "pnpm build --filter=!@YOUR_ORG/docs && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.0",
+    "turbo": "^2.0.0",
+    "typescript": "^5.0.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "esbuild": "0.25.5"
+    }
+  }
+}
