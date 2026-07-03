@@ -1,5 +1,16 @@
 # Design System — Claude Code Guide
 
+## Governance
+
+This is a governance-aware design system — structural decisions are recorded,
+not just implemented. Before proposing or reviewing a component change, see:
+
+- [docs/governance/CONTRIBUTING.md](docs/governance/CONTRIBUTING.md) — contributor-facing
+  process for adding components, naming conventions, and boundary rules
+- [docs/decisions/](docs/decisions/) — architecture decision records (ADRs) explaining
+  *why* structural choices were made (e.g. Base UI over Radix, primitive/semantic
+  token separation)
+
 ## Running Commands in Claude Code
 
 pnpm is served via corepack shims and may not be on PATH in the tool environment. If any pnpm command fails with "command not found", prefix with:
