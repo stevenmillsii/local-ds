@@ -1,6 +1,16 @@
 @import "tailwindcss";
 
 /*
+ * Tailwind v4's automatic content detection only scans within this app's own
+ * directory tree — it does not cross package boundaries in the monorepo.
+ * Without these, none of the utility classes used inside packages/components
+ * (bg-primary, hover:*, focus-visible:*, aria-disabled:*, etc.) get generated,
+ * so components render with no interactive-state styling at all.
+ */
+@source "../../../packages/components/src";
+@source "../../../packages/primitives/src";
+
+/*
  * Brand token import — swap this line to switch brands.
  * SETUP: Replace @stevenmillsii with your actual package scope.
  * Available: @stevenmillsii/tokens/themes/hfd | @stevenmillsii/tokens/themes/personal

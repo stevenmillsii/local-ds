@@ -45,4 +45,42 @@ describe('Button', () => {
     render(<Button size="lg">Large</Button>);
     expect(screen.getByRole('button')).toHaveClass('h-12');
   });
+
+  describe('loading', () => {
+    it('sets aria-busy and keeps the button focusable rather than natively disabled', () => {
+      render(<Button loading>Save</Button>);
+      const btn = screen.getByRole('button');
+      expect(btn).toHaveAttribute('aria-busy', 'true');
+      expect(btn).toHaveAttribute('aria-disabled', 'true');
+      expect(btn).not.toBeDisabled();
+      expect(btn).toHaveAttribute('tabindex', '0');
+    });
+
+    it('does not fire onClick while loading', async () => {
+      const user = userEvent.setup();
+      const handleClick = vi.fn();
+      render(
+        <Button loading onClick={handleClick}>
+          Save
+        </Button>,
+      );
+      await user.click(screen.getByRole('button'));
+      expect(handleClick).not.toHaveBeenCalled();
+    });
+
+    it('keeps the accessible name and renders a decorative spinner', () => {
+      render(<Button loading>Save</Button>);
+      const btn = screen.getByRole('button', { name: 'Save' });
+      expect(btn.querySelector('svg[aria-hidden="true"]')).toBeInTheDocument();
+    });
+
+    it('falls back to native disabled when both disabled and loading are set', () => {
+      render(
+        <Button disabled loading>
+          Save
+        </Button>,
+      );
+      expect(screen.getByRole('button')).toBeDisabled();
+    });
+  });
 });
