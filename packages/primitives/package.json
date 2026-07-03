@@ -1,5 +1,5 @@
 {
-  "name": "@YOUR_ORG/primitives",
+  "name": "@stevenmillsii/primitives",
   "version": "0.1.0",
   "description": "Thin re-export surface over Base UI primitives — no styling, just our import contract",
   "type": "module",

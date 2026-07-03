@@ -1,5 +1,5 @@
 {
-  "name": "@YOUR_ORG/docs",
+  "name": "@stevenmillsii/docs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,8 +11,8 @@
     "clean": "rm -rf .next"
   },
   "dependencies": {
-    "@YOUR_ORG/components": "workspace:*",
-    "@YOUR_ORG/tokens": "workspace:*",
+    "@stevenmillsii/components": "workspace:*",
+    "@stevenmillsii/tokens": "workspace:*",
     "next": "^15.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

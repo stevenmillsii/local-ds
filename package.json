@@ -15,7 +15,7 @@
     "verify": "turbo run build typecheck lint test",
     "changeset": "changeset",
     "version": "changeset version",
-    "publish:packages": "pnpm build --filter=!@YOUR_ORG/docs && changeset publish"
+    "publish:packages": "pnpm build --filter=!@stevenmillsii/docs && changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.0",

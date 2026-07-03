@@ -1,4 +1,4 @@
-import { Button } from '@YOUR_ORG/components';
+import { Button } from '@stevenmillsii/components';
 
 export default function Home() {
   return (

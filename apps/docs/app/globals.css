@@ -2,10 +2,10 @@
 
 /*
  * Brand token import — swap this line to switch brands.
- * SETUP: Replace @YOUR_ORG with your actual package scope.
- * Available: @YOUR_ORG/tokens/themes/hfd | @YOUR_ORG/tokens/themes/personal
+ * SETUP: Replace @stevenmillsii with your actual package scope.
+ * Available: @stevenmillsii/tokens/themes/hfd | @stevenmillsii/tokens/themes/personal
  */
-@import "@YOUR_ORG/tokens/themes/hfd";
+@import "@stevenmillsii/tokens/themes/hfd";
 
 /*
  * The @theme block above is already emitted by the token CSS file.

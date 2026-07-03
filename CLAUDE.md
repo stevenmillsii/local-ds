@@ -1,15 +1,5 @@
 # Design System — Claude Code Guide
 
-## SETUP: Replace @YOUR_ORG
-
-`@YOUR_ORG` is a placeholder for your GitHub org/username. Replace it everywhere before publishing:
-- All `packages/*/package.json` → `"name"` field
-- All `packages/*/package.json` → workspace dependency refs
-- `apps/docs/package.json` → dependency refs
-- `.npmrc` → registry scope line
-- `.changeset/config.json` → `"ignore"` list
-- `apps/docs/app/globals.css` → token CSS import
-
 ## Running Commands in Claude Code
 
 pnpm is served via corepack shims and may not be on PATH in the tool environment. If any pnpm command fails with "command not found", prefix with:
@@ -61,8 +51,8 @@ pnpm test        # Run all tests
 
 **Any change to a published package is not done until it has a changeset.**
 
-Published packages: `@YOUR_ORG/tokens`, `@YOUR_ORG/primitives`, `@YOUR_ORG/components`  
-Not published: `@YOUR_ORG/docs`
+Published packages: `@stevenmillsii/tokens`, `@stevenmillsii/primitives`, `@stevenmillsii/components`  
+Not published: `@stevenmillsii/docs`
 
 ```bash
 # After editing any published package:
@@ -96,7 +86,7 @@ Follow this exact sequence — verify at step 6 before moving on:
 
 6. **Verify** — `pnpm run verify` must pass
 
-7. **Changeset** — `pnpm changeset` → select at minimum `@YOUR_ORG/components`
+7. **Changeset** — `pnpm changeset` → select at minimum `@stevenmillsii/components`
 
 ## File/Naming Conventions
 
@@ -110,7 +100,7 @@ Follow this exact sequence — verify at step 6 before moving on:
 
 Token values are in `packages/tokens/src/brands/{brand}/`:
 - Fill in the `TODO:` placeholders with real CSS color values (hex, oklch, etc.)
-- Run `pnpm build --filter=@YOUR_ORG/tokens` to regenerate CSS files in `dist/themes/`
+- Run `pnpm build --filter=@stevenmillsii/tokens` to regenerate CSS files in `dist/themes/`
 - Token CSS maps primitive vars → semantic vars; `apps/docs/globals.css` maps semantic → Tailwind theme
 
 ## Tech Stack Reference

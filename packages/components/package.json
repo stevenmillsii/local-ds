@@ -1,6 +1,6 @@
 {
-  "name": "@YOUR_ORG/components",
-  "version": "0.1.1",
+  "name": "@stevenmillsii/components",
+  "version": "0.1.2",
   "description": "Styled design system components — primitives + tokens + Tailwind",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -32,8 +32,8 @@
     "react-dom": "^18.0.0 || ^19.0.0"
   },
   "dependencies": {
-    "@YOUR_ORG/primitives": "workspace:*",
-    "@YOUR_ORG/tokens": "workspace:*",
+    "@stevenmillsii/primitives": "workspace:*",
+    "@stevenmillsii/tokens": "workspace:*",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "tailwind-merge": "^2.0.0"

@@ -1,7 +1,7 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  transpilePackages: ['@YOUR_ORG/components', '@YOUR_ORG/tokens', '@YOUR_ORG/primitives'],
+  transpilePackages: ['@stevenmillsii/components', '@stevenmillsii/tokens', '@stevenmillsii/primitives'],
 };
 
 export default nextConfig;

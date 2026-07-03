@@ -1,6 +1,6 @@
 {
-  "name": "@YOUR_ORG/tokens",
-  "version": "0.2.0",
+  "name": "@stevenmillsii/tokens",
+  "version": "0.2.1",
   "description": "Design tokens for hfd and personal brands — colors, typography, spacing, radius",
   "type": "module",
   "main": "./dist/index.cjs",
