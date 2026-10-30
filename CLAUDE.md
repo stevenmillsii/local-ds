@@ -2,8 +2,11 @@
 
 ## What this is
 
-A learning-project design system for a headless design system, being rebuilt step by
-step (the previous system is archived at git tag `v0-archive`). The owner is a
+A brand-agnostic design system built on headless (Base UI) primitives, with a
+default reference theme. The semantic token contract is the product: other
+brands or products plug in by supplying their own theme values. Started as a
+learning project; may be used for the owner's future projects. Being rebuilt
+step by step (the previous system is archived at git tag `v0-archive`). The owner is a
 Staff Product Designer — strong on token taxonomy, naming, and governance,
 newer to code. The goal is to learn the code side by building it, and to make
 the system agent-friendly: AI can generate and audit within enforced rules.
@@ -26,7 +29,7 @@ packages/tokens  →  packages/components  →  Storybook
 | Concern | Choice |
 |---|---|
 | Token format | DTCG JSON |
-| Token build | Style Dictionary → CSS custom properties + Tailwind v4 theme |
+| Token build | Terrazzo (DTCG resolver for brand/mode/density) → CSS custom properties + Tailwind v4 theme |
 | Token tiers | primitive → semantic (required); responsive as modes; component tokens only where a component needs them |
 | Components | React + Base UI (headless), styled with semantic tokens only |
 | Docs | Storybook + a machine-readable spec per component |
