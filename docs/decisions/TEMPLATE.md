@@ -1,4 +1,15 @@
-# ADR-NNN: {Title}
+# ADR-NNN: {The choice, e.g. "Terrazzo as the token build tool"}
+
+<!--
+How to use this template:
+- One decision per ADR. Write it when the decision is made, not after.
+- Fill each sentence starter below, then delete the starter text and these
+  comments. Rewrite freely once the sentences read naturally.
+- Self-check: if you can't explain the "why" in your own words, the decision
+  isn't made yet. Talk it through before writing.
+- Every claim should be true. Future readers, including AI agents, will act on
+  what this says.
+-->
 
 **Status:** Proposed | Accepted | Superseded by ADR-NNN
 
@@ -6,27 +17,31 @@
 
 ## Context
 
-What situation or problem forced this decision? What constraints (technical,
-team size, timeline, prior incidents) shaped the options available? Enough
-background that someone with no memory of the discussion understands why a
-decision was even needed.
+<!-- The problem that forced a decision, not how the options came up. -->
+
+We need ___.
+The constraint is ___.
+What changed (or why now) is ___.
 
 ## Decision
 
-What we're doing, stated plainly in one or two sentences. Not a summary of
-the discussion — the actual outcome.
+<!-- First line: the choice in one sentence. Then the reasons. -->
+
+We will use / do ___ for ___.
+
+This is because ___.
 
 ## Alternatives Considered
 
-For each real alternative, one or two sentences on what it was and why it
-lost. Skip alternatives no one seriously considered — this section is for
-options that were genuinely on the table, not a strawman list.
+<!-- Only options that were really on the table. Say why each lost. -->
 
-- **Option A** — why it wasn't chosen
-- **Option B** — why it wasn't chosen
+- **___.** Its strengths are ___. Rejected because ___.
+- **___.** Its strengths are ___. Rejected because ___.
 
 ## Consequences
 
-What this decision makes easier, harder, or forecloses. Include the honest
-trade-offs, not just the upside — a decision record that only lists benefits
-isn't trustworthy the next time someone has to decide whether to revisit it.
+<!-- Be honest about the costs; an ADR that lists only benefits isn't trustworthy. -->
+
+- **Easier:** ___
+- **Harder:** ___
+- **Revisit if:** ___
